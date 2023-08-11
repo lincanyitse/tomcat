@@ -1,5 +1,4 @@
-ARG JDK_IMG="lincanyitse/openjdk:8-jdk-debian"
-FROM ${JDK_IMG}
+FROM lincanyitse/openjdk:8-jdk-debian
 
 ARG TOMCAT_URL="https://mirrors.aliyun.com/apache/tomcat"
 
@@ -12,7 +11,7 @@ ENV TOMCAT_NATIVE_LIBDIR $CATALINA_HOME/native-jni-lib
 ENV LD_LIBRARY_PATH ${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH:}$TOMCAT_NATIVE_LIBDIR
 
 ENV TOMCAT_MAJOR 8
-ENV TOMCAT_VERSION 8.5.84
+ENV TOMCAT_VERSION 8.5.91
 ENV TOMCAT_DOWNLOAD_URL ${TOMCAT_URL}/tomcat-${TOMCAT_MAJOR}/v${TOMCAT_VERSION}/bin
 
 RUN set -eux && \
